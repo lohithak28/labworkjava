@@ -1,0 +1,239 @@
+📌 Git Commands Cheat Sheet
+🔹 Setup & Configuration
+
+git config --global user.name "Your Name" → Set username globally
+
+git config --global user.email "your@email.com" → Set email globally
+
+git config --list → Show all Git configurations
+
+🔹 Repository Initialization
+
+git init → Initialize a new Git repository
+
+git clone <repo_url> → Clone a remote repository locally
+
+🔹 Basic Snapshotting
+
+git status → Show the status of files (modified, staged, untracked)
+
+git add <file> → Stage a file for commit
+
+git add . → Stage all modified/untracked files
+
+git reset <file> → Unstage a staged file
+
+git commit -m "message" → Commit staged changes with a message
+
+git commit -am "message" → Stage & commit all tracked files in one step
+
+git log → View commit history
+
+git log --oneline → View commits in single-line format
+
+🔹 Branching & Merging
+
+git branch → List all branches
+
+git branch <name> → Create a new branch
+
+git checkout <branch> → Switch to another branch
+
+git checkout -b <branch> → Create & switch to a new branch
+
+git merge <branch> → Merge a branch into the current branch
+
+git branch -d <branch> → Delete a branch
+
+git switch <branch> → Switch to a branch (newer alternative to checkout)
+
+git switch -c <branch> → Create & switch to new branch
+
+🔹 Remote Repositories
+
+git remote -v → List remote connections
+
+git remote add origin <url> → Add a new remote repository
+
+git remote remove origin → Remove a remote repository
+
+git fetch → Fetch changes from remote but don’t merge
+
+git pull → Fetch and merge changes from remote
+
+git push origin <branch> → Push local branch to remote
+
+git push -u origin <branch> → Push and set upstream tracking branch
+
+🔹 Undoing Changes
+
+git restore <file> → Discard changes in working directory
+
+git restore --staged <file> → Unstage file but keep changes
+
+git reset --hard → Reset staging area & working directory to last commit
+
+git reset --soft HEAD~1 → Undo last commit but keep changes staged
+
+git revert <commit> → Create new commit that undoes changes of given commit
+
+🔹 Stashing (Temporary Save)
+
+git stash → Stash (save) uncommitted changes
+
+git stash list → List all stashes
+
+git stash apply → Reapply last stashed changes
+
+git stash pop → Reapply last stash and delete it
+
+git stash drop → Delete a specific stash
+
+🔹 Tagging
+
+git tag → List all tags
+
+git tag <name> → Create a new tag
+
+git tag -a <name> -m "message" → Create annotated tag
+
+git push origin <tag> → Push a tag to remote
+
+git push origin --tags → Push all tags to remote
+
+🔹 Collaboration & Inspection
+
+git diff → Show unstaged changes
+
+git diff --staged → Show staged changes
+
+git show <commit> → Show details of a commit
+
+git blame <file> → Show who changed each line of a file
+
+git shortlog → Summarize commits by author
+
+🔹 Cleaning Up
+
+git clean -n → Show which files would be removed
+
+git clean -f → Remove untracked files
+
+git gc → Run garbage collection and optimize repository
+
+🔹 Advanced
+
+git rebase <branch> → Reapply commits on top of another branch
+
+git cherry-pick <commit> → Apply a specific commit from another branch
+
+git bisect start → Start binary search to find buggy commit
+
+git bisect good <commit> / git bisect bad <commit> → Mark commits during bisecting
+🔹 Advanced Branch & Checkout
+
+git branch -a → List all local + remote branches
+
+git branch -r → List remote branches only
+
+git checkout -- <file> → Discard changes in a file
+
+git checkout <commit> → Switch to a specific commit (detached HEAD)
+
+git switch - → Switch back to last branch
+
+🔹 Remote Management
+
+git remote rename origin upstream → Rename a remote
+
+git remote set-url origin <new_url> → Change remote repo URL
+
+git push --delete origin <branch> → Delete branch from remote
+
+git pull --rebase → Pull changes but rebase instead of merge
+
+git fetch --all → Fetch all remotes
+
+🔹 Log & History Exploration
+
+git log --graph --oneline --all → Pretty commit graph
+
+git log -p → Show patch/diff with commit history
+
+git log --author="Name" → Show commits by a specific author
+
+git log --since="2 weeks ago" → Show recent commits
+
+git reflog → Show all HEAD changes (even deleted commits!)
+
+🔹 Reset & Recovery
+
+git reset HEAD~1 → Undo last commit, keep changes unstaged
+
+git reset --mixed → Unstage files but keep changes
+
+git reset --hard <commit> → Reset everything to a given commit
+
+git checkout <commit> -- <file> → Restore a file from past commit
+
+git reflog + git checkout → Recover lost commits
+
+🔹 Stash (More Options)
+
+git stash save "msg" → Stash with a message
+
+git stash apply stash@{2} → Apply a specific stash
+
+git stash branch <branch> → Create a branch from stashed changes
+
+🔹 Tags (More Options)
+
+git show <tag> → Show tag details
+
+git tag -d <tag> → Delete a tag locally
+
+git push origin :refs/tags/<tag> → Delete tag on remote
+
+🔹 Collaboration
+
+git fetch origin <branch> → Fetch a specific branch
+
+git merge --abort → Abort merge conflicts
+
+git mergetool → Launch merge resolution tool
+
+git pull --no-commit → Pull changes but don’t commit automatically
+
+🔹 Submodules
+
+git submodule add <url> → Add a submodule
+
+git submodule init → Initialize submodules
+
+git submodule update → Update submodules
+
+git clone --recurse-submodules <url> → Clone with submodules
+
+🔹 Patching & Export
+
+git diff > patch.diff → Create a patch file
+
+git apply patch.diff → Apply a patch file
+
+git format-patch -1 <commit> → Generate email-ready patch
+
+🔹 Cleanup & Maintenance
+
+git prune → Remove unreachable objects
+
+git fsck → Check repo for corruption/issues
+
+git gc --aggressive → Deep optimize repo
+
+🔹 Useful Shortcuts
+
+git alias (via config) → Create custom Git shortcuts
+
+git help <command> → Show help for a command
+
+git rev-parse HEAD → Get current commit hash

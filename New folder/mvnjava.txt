@@ -1,0 +1,68 @@
+Step 1: Open New Maven Project
+
+Go to File → New → Project
+
+Search for Maven
+
+Select Maven Project
+
+Click Next
+
+✅ Step 2: Choose Workspace Location
+
+Keep Use default Workspace location checked
+
+Click Next
+
+✅ Step 3: Select Maven Archetype
+
+You will see a long list.
+Choose:
+
+maven-archetype-quickstart
+
+
+If you don’t see it → click Catalog: All Catalogs → search "quickstart".
+
+Then click Next.
+
+✅ Step 4: Enter Project Details (VERY IMPORTANT)
+
+Fill these fields:
+
+Field	Example
+Group Id	com.example
+Artifact Id	demo
+Version	auto-generated
+Package	com.example.demo
+
+Click Finish.
+
+📁 Your Maven Project Structure
+
+Eclipse will generate:
+
+demo
+ ├── src
+ │   ├── main
+ │   │   └── java
+ │   └── test
+ │       └── java
+ ├── pom.xml
+
+🧠 Important: Enable Maven Dependencies
+
+Sometimes Eclipse does not resolve Maven automatically.
+
+Right-click the project →
+Maven → Update Project (Alt + F5)
+Check Force Update of Snapshots → OK
+
+▶️ Run the Project
+
+Open the auto-generated file:
+
+src/main/java/com/example/App.java
+
+
+Right-click → Run As → Java Application
